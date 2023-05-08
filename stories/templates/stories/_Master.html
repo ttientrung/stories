@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+	24 News by FreeHTML5.co
+	Twitter: https://twitter.com/fh5co
+	Facebook: https://fb.com/fh5co
+	URL: https://freehtml5.co
+-->
+<html lang="en" class="no-js">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title %} | Stories | A django practice project</title>
+    <link href="{% static 'stories/css/media_query.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'stories/css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="{% static 'stories/css/animate.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="{% static 'stories/css/owl.carousel.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'stories/css/owl.theme.default.css' %}" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'stories/images/favicon.ico' %}">
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'stories/css/style_1.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- Modernizr JS -->
+    <script src="{% static 'stories/js/modernizr-3.5.0.min.js' %}"></script>
+
+</head>
+<body>
+<div class="container-fluid fh5co_header_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting" id="ct6"><i
+                    class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;</a>
+                <div class="d-inline-block fh5co_trading_posotion_relative"><a href="#" class="treding_btn">Trending</a>
+                    <div class="fh5co_treding_position_absolute"></div>
+                </div>
+                <a href="#" class="color_fff fh5co_mediya_setting">Instagram’s big redesign goes live with black-and-white app</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3 fh5co_padding_menu">
+                <a href="{% url 'stories:index' %}">
+                    <img src="{% static 'stories/images/stories.png' %}" alt="MyNews" class="fh5co_logo_width"/>
+                </a>
+            </div>
+            <div class="col-12 col-md-5 align-self-center fh5co_mediya_right">
+                {% comment %} <div class="text-center d-inline-block">
+                    <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div></a>
+                </div> {% endcomment %}
+                <div class="text-center d-inline-block">
+                    <a href="https://www.linkedin.com/in/h%E1%BA%A1nh-nguy%C3%AAn-8a2895138/?fbclid=IwAR1pD7TBw6Exad4WXDvmDwWJhJXyms3lxL36cwxsje_j82ja0mnJ0w_FJiA" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div></a>
+                </div>
+                <div class="text-center d-inline-block">
+                    <a href="https://freehtml5.co" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-globe"></i></div></a>
+                </div>
+                <div class="text-center d-inline-block">
+                    <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                </div>
+                <div class="text-center d-inline-block">
+                    <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                </div>
+                <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
+                {% comment %} <div class="d-inline-block text-center dd_position_relative ">
+                    <select class="form-control fh5co_text_select_option">
+                        <option>English </option>
+                        <option>French </option>
+                        <option>German </option>
+                        <option>Spanish </option>
+                    </select>
+                </div> {% endcomment %}
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-12 col-md-4 align-self-center fh5co_mediya_right">
+                <form id="searchForm" class="form-inline" method="GET" action="{% url 'stories:search-result' %}">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <input type="text" class="form-control" name="search_query" placeholder="Search for story" value="{{search_query}}">
+                    </div>
+                    <button type="submit" class="btn btn-secondary mb-2"><i class="fa fa-search"></i></button>
+                  </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
+    <div class="container padding_786">
+        <nav class="navbar navbar-toggleable-md navbar-light ">
+            <button class="navbar-toggler navbar-toggler-right mt-3" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="img" class="mobile_logo_width"/></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="{% url 'stories:index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="{% url 'stories:category' 1 %}">Young Children <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="{% url 'stories:category' 2 %}">Older Children <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="#">Stories <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="#">RSS <span class="sr-only">(current)</span></a>
+                    </li>
+                    {% comment %} <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">World <span class="sr-only">(current)</span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+                            <a class="dropdown-item" href="#">Action in</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+                            <a class="dropdown-item" href="#">Action in</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li> {% endcomment %}
+                    <li class="nav-item mn">
+                        <a class="nav-link" href="{% url 'stories:contact-us' %}">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+{% block content %}
+
+{% endblock content %}
+
+<div class="container-fluid fh5co_footer_bg pb-3">
+    <div class="container animate-box">
+        <div class="row">
+            <div class="col-12 spdp_right py-5">
+                <a href="{% url 'stories:index' %}">
+                    <img src="{% static 'stories/images/stories_white.png' %}" alt="img" class="footer_logo"/>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="footer_main_title py-3"> About</div>
+                <div class="footer_sub_about pb-3"> This website is designed specifically for children who love reading and learning good things from the books. Website references data from a number of sites like: https://www.freechildrenstories.com/, http://www.magickeys.com/books/
+                </div>
+                <div class="footer_mediya_icon">
+                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://www.linkedin.com/in/h%E1%BA%A1nh-nguy%C3%AAn-8a2895138/?fbclid=IwAR1pD7TBw6Exad4WXDvmDwWJhJXyms3lxL36cwxsje_j82ja0mnJ0w_FJiA">
+                        <div class="fh5co_verticle_middle"><i class="fa fa-linkedin"></i></div>
+                    </a></div>
+                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://freehtml5.co">
+                        <div class="fh5co_verticle_middle"><i class="fa fa-globe"></i></div>
+                    </a></div>
+                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://twitter.com/fh5co">
+                        <div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div>
+                    </a></div>
+                    <div class="text-center d-inline-block"><a class="fh5co_display_table_footer" href="https://fb.com/fh5co">
+                        <div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div>
+                    </a></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 col-lg-2">
+                <div class="footer_main_title py-3"> Category</div>
+                <ul class="footer_menu">
+                    {% for category in category %}
+                        {% if category.name == "Young Children" %}
+                            <li><a href="{% url 'stories:category' 1 %}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; {{category}}</a></li>
+                        {% endif %}
+                        {% if category.name == "Older Children" %}
+                            <li><a href="{% url 'stories:category' 2 %}" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; {{category}}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-12 col-md-5 col-lg-3 position_footer_relative">
+                <div class="footer_main_title py-3"> Most Viewed Stories</div>
+                {% for story in most_viewed %}
+                <div class="footer_makes_sub_font"> {{story.public_day}}</div>
+                <a href="{% url 'stories:story' story.pk %}" class="footer_post pb-4"> {{story}} </a>
+                {% endfor %}
+                {% comment %} <div class="footer_position_absolute"><img src="images/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div> {% endcomment %}
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 ">
+                <div class="footer_main_title py-3"> Newest Stories</div>
+                {% for story in list_6 %}
+                <a href="{% url 'stories:story' story.pk %}" class="footer_img_post_6"><img src="{{story.image.url}}" alt="{{story}}"/></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row justify-content-center pt-2 pb-4">
+            <div class="col-12 col-md-8 col-lg-7 ">
+                <div class="input-group">
+                    <span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                    <input type="text" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
+                    <a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid fh5co_footer_right_reserved">
+    <div class="container">
+        <div class="row  ">
+            <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2018, All rights reserved. Design by <a href="https://freehtml5.co" title="Free HTML5 Bootstrap templates">FreeHTML5.co</a>. </div>
+            <div class="col-12 col-md-6 spdp_right py-4">
+                <a href="{% url 'stories:index' %}" class="footer_last_part_menu">Home</a>
+                <a href="{% url 'stories:category' 1 %}" class="footer_last_part_menu">Young Children</a>
+                <a href="{% url 'stories:category' 2 %}" class="footer_last_part_menu">Older Children</a>
+                <a href="{% url 'stories:contact-us' %}" class="footer_last_part_menu">Contact</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    jQuery(function ($) {
+        let path = window.location.href;
+        $('.mn a').each(function () {
+            if (this.href === path) {
+                $(this).parent().addClass('active')
+            }
+        });
+    });
+</script>
+<script>
+    function display_ct6() {
+        var x = new Date()
+        var ampm = x.getHours() >= 12 ? ' PM' : ' AM';
+        hours = x.getHours() % 12;
+        hours = hours ? hours : 12;
+        var x1 = x.getMonth() + 1 + "/" + x.getDate() + "/" + x.getFullYear();
+        x1 = x1 + " - " + hours + ":" + x.getMinutes() + ":" + x.getSeconds() + " " + ampm;
+        document.getElementById('ct6').innerHTML = x1;
+        display_c6();
+    }
+
+    function display_c6() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout('display_ct6()', refresh)
+    }
+
+</script>
+
+{% block search_func %}{% endblock search_func %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{% static 'stories/js/owl.carousel.min.js' %}"></script>
+<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<!-- Waypoints -->
+<script src="{% static 'stories/js/jquery.waypoints.min.js' %}"></script>
+<!-- Parallax -->
+<script src="{% static 'stories/js/jquery.stellar.min.js' %}"></script>
+<!-- Main -->
+<script src="{% static 'stories/js/main.js' %}"></script>
+<script>if (!navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){$(window).stellar();}</scrip>
+
+</body>
+</html>
